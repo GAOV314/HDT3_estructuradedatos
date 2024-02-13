@@ -41,6 +41,27 @@ class TestSortingAlgorithms(unittest.TestCase):
         selection_sort(sorted_list)
         self.assertEqual(sorted_list, sorted(self.random_numbers))
 
+    def test_radix_sort_sorted_list(self):
+        sorted_list = self.sorted_numbers.copy()
+        radixSort(sorted_list)
+        self.assertEqual(sorted_list, self.sorted_numbers)
+
+    def test_radix_sort_random_list(self):
+        sorted_list = self.random_numbers.copy()
+        radixSort(sorted_list)
+        self.assertEqual(sorted_list, sorted(self.random_numbers))
+
+    # Tests para Counting Sort
+    def test_counting_sort_sorted_list(self):
+        sorted_list = self.sorted_numbers.copy()
+        countingSort(sorted_list, 1)  # Ordenamos con Counting Sort usando cualquier place
+        self.assertEqual(sorted_list, self.sorted_numbers)
+
+    def test_counting_sort_random_list(self):
+        sorted_list = self.random_numbers.copy()
+        countingSort(sorted_list, 1)  # Ordenamos con Counting Sort usando cualquier place
+        self.assertEqual(sorted_list, sorted(self.random_numbers))
+
 
 
 if __name__ == "__main__":
